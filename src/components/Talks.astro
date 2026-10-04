@@ -1,5 +1,6 @@
 ---
 import { talks } from "../data/site";
+import ExternalLink from "./ExternalLink.astro";
 ---
 
 <section id="writing" class="wrap section" aria-labelledby="talks-title">
@@ -7,11 +8,10 @@ import { talks } from "../data/site";
   <ul class="grid" style="--min: 300px">
     {talks.map((t) => (
       <li>
-        <a class="talk" href={t.url} target="_blank" rel="noopener noreferrer">
+        <ExternalLink class="talk" href={t.url}>
           <span class="host">{t.host} · YouTube</span>
           <span class="title">{t.title}</span>
-          <span class="sr-only">(opens in a new tab)</span>
-        </a>
+        </ExternalLink>
       </li>
     ))}
   </ul>
@@ -23,7 +23,8 @@ import { talks } from "../data/site";
     letter-spacing: -0.02em;
   }
 
-  .talk {
+  :global(.talk) {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -36,9 +37,15 @@ import { talks } from "../data/site";
     text-decoration: none;
   }
 
-  .talk:hover {
+  :global(.talk:hover) {
     color: var(--text);
     border-color: var(--accent-edge);
+  }
+
+  :global(.talk .ext-icon) {
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
 
   .host {

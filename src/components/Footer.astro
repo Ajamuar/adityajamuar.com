@@ -1,5 +1,6 @@
 ---
 import { site } from "../data/site";
+import ExternalLink from "./ExternalLink.astro";
 ---
 
 <footer id="hello" class="footer">
@@ -8,8 +9,8 @@ import { site } from "../data/site";
     <p class="lede">Services, platform architecture, CI/CD, agentic workflows — or just a good engineering story. My inbox is open.</p>
     <div class="links">
       <a class="pill pill-primary" href={`mailto:${site.email}`}>{site.email}</a>
-      <a class="pill" href={site.links.linkedin} rel="me">LinkedIn</a>
-      <a class="pill" href={site.links.github} rel="me">GitHub</a>
+      <ExternalLink class="pill" href={site.links.linkedin} rel="me">LinkedIn</ExternalLink>
+      <ExternalLink class="pill" href={site.links.github} rel="me">GitHub</ExternalLink>
     </div>
     <p class="fine">{site.location} · built with Astro, hosted on Cloudflare</p>
   </div>

@@ -1,0 +1,179 @@
+---
+import { versioning } from "../data/site";
+---
+
+<section id="versioning" class="wrap section" aria-labelledby="ver-title">
+  <div class="section-head">
+    <p class="kicker">// case study</p>
+    <h2 id="ver-title" class="h2">{versioning.title}</h2>
+    <p class="lede">{versioning.summary}</p>
+  </div>
+
+  <div class="compare">
+    <div class="side before">
+      <h3>Before</h3>
+      <ul>
+        {versioning.before.map((item) => (
+          <li>
+            <span class="mark" aria-hidden="true">−</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="side after">
+      <h3>After</h3>
+      <ul>
+        {versioning.after.map((item) => (
+          <li>
+            <span class="mark" aria-hidden="true">+</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="steps-wrap">
+    <h3 class="steps-title">How I ran it, end to end</h3>
+    <ol class="steps">
+      {versioning.steps.map((step, i) => (
+        <li class="step">
+          <span class="num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+          <div>
+            <h4>{step.title}</h4>
+            <p>{step.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .compare {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 16px;
+  }
+
+  .side {
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .after {
+    border-color: var(--accent-edge);
+  }
+
+  .side h3 {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .before h3 {
+    color: var(--muted);
+  }
+
+  .after h3 {
+    color: var(--accent);
+  }
+
+  .side ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .side li {
+    display: flex;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .before li {
+    color: var(--text-soft);
+  }
+
+  .mark {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    width: 1ch;
+  }
+
+  .before .mark {
+    color: var(--muted);
+  }
+
+  .after .mark {
+    color: var(--accent);
+  }
+
+  .steps-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 16px;
+  }
+
+  .steps-title {
+    font-size: 22px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 0;
+    counter-reset: step;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 20px 20px 0;
+    border-top: 2px solid var(--border-strong);
+    position: relative;
+  }
+
+  .step::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-fill);
+    border: 2px solid var(--accent-edge);
+  }
+
+  .step:last-child {
+    border-top-color: var(--accent-edge);
+  }
+
+  .num {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  h4 {
+    font-size: 18px;
+    margin: 0 0 6px;
+  }
+
+  .step p {
+    color: var(--text-soft);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+</style>

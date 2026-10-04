@@ -19,6 +19,14 @@ import { highlights } from "../data/site";
         )}
         <h3 class:list={{ small: Boolean(h.figure) }}>{h.title}</h3>
         <p class="body">{h.body}</p>
+        {h.href && h.cta && (
+          <a class="cta" href={h.href}>
+            {h.cta}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 5v14M5 12l7 7 7-7"></path>
+            </svg>
+          </a>
+        )}
       </li>
     ))}
   </ul>
@@ -66,6 +74,24 @@ import { highlights } from "../data/site";
     background: var(--accent-fill);
     border-color: var(--accent-edge);
     color: var(--on-accent);
+  }
+
+  .cta {
+    margin-top: auto;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    font-weight: 700;
+    color: var(--on-accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .cta:hover {
+    color: var(--on-accent);
+    text-decoration-thickness: 2px;
   }
 
   .featured .meta,
