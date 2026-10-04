@@ -1,9 +1,9 @@
 export const site = {
   name: "Aditya Jamuar",
   url: "https://adityajamuar.com",
-  title: "Aditya Jamuar — Frontend platform engineer",
+  title: "Aditya Jamuar — Full-stack product engineer",
   description:
-    "Software Engineer at epilot. Seven years across design systems, product platforms and agent-assisted engineering — from NativeBase to Jira to customer portals for energy utilities.",
+    "Software Engineer at epilot. Seven years building products end to end — APIs, cloud tooling, CI/CD and the interfaces on top — from BuilderX to Jira to customer portals for energy utilities.",
   email: "hi@adityajamuar.com",
   location: "Bengaluru, India",
   links: {
@@ -32,9 +32,15 @@ export const highlights: Highlight[] = [
   },
   {
     org: "epilot",
-    area: "ai",
-    title: "Tests that fix themselves",
-    body: "A self-healing Playwright pipeline on GitHub Actions and Claude Code. Broken tests become fix PRs, reviewed and merged by a human, never auto-merged.",
+    area: "cloud",
+    title: "AWS tooling that cleans up after itself",
+    body: "Tooling that finds and safely removes stale Cognito resources across dev environments, with dry runs and confirmation gates before anything is deleted.",
+  },
+  {
+    org: "geekyants",
+    area: "backend",
+    title: "BuilderX, from FeathersJS to Laravel",
+    body: "Drove the architecture of an early design-to-code platform end to end, including moving its backend from FeathersJS to Laravel — and gave a talk on how we did it.",
   },
   {
     org: "atlassian",
@@ -48,14 +54,7 @@ export const highlights: Highlight[] = [
     org: "atlassian",
     area: "architecture",
     title: "Jira Issue View, re-platformed",
-    body: "Led the Relay migration and layout modernization, moved ownership from Australia to India, and ran UX experiments that lifted engagement 31%.",
-  },
-  {
-    org: "intuit",
-    area: "product",
-    figure: "NPS 90+",
-    title: "Video meetings across the Intuit ecosystem",
-    body: "Resilient frontend architecture and the foundation for multi-participant calls.",
+    body: "Led the Relay migration and layout modernization, moved ownership from Australia to India, and ran experiments that lifted engagement 31%.",
   },
   {
     org: "geekyants",
@@ -90,8 +89,16 @@ export const practices = [
   },
 ] as const;
 
+export const stack = [
+  { group: "Backend & cloud", items: ["Node.js", "TypeScript", "PHP & Laravel", "FeathersJS", "GraphQL", "MySQL", "AWS", "Docker"] },
+  { group: "Delivery", items: ["GitLab CI", "GitHub Actions", "Jenkins", "Playwright", "Jest"] },
+  { group: "Interfaces", items: ["React", "Next.js", "React Native", "Relay"] },
+  { group: "AI tooling", items: ["Claude Code", "Cursor", "Agentic workflows"] },
+];
+
 export const filters = [
   { id: "all", label: "All" },
+  { id: "backend", label: "Backend & cloud" },
   { id: "platform", label: "Platform & DX" },
   { id: "ai", label: "AI" },
   { id: "design", label: "Design systems" },
@@ -115,12 +122,13 @@ export const releases: Release[] = [
     company: "epilot",
     role: "Software Engineer 2",
     tone: "accent",
-    cats: ["platform", "ai"],
+    cats: ["backend", "platform", "ai"],
     items: [
+      "Work across the customer portal stack: the frontend, its API and the CI/CD pipelines that ship them.",
       "Designed review builds for the end-customer portal: any merge request can be loaded into a deployed environment with one URL parameter and immutable build IDs. Wrote the RFC.",
       "Built a self-healing Playwright pipeline on GitHub Actions and Claude Code that opens fix PRs for broken tests and never auto-merges.",
       "Shipped a Git worktree CLI that runs four portal repos side by side with deterministic ports.",
-      "Built tooling to find and safely clean up stale identity resources across dev environments.",
+      "Built AWS tooling to find and safely clean up stale Cognito resources across dev environments, with dry runs and confirmation gates.",
       "Proposed portal versioning with a visual diff and preview model.",
     ],
   },
@@ -148,7 +156,7 @@ export const releases: Release[] = [
     cats: ["platform", "leadership"],
     items: [
       "Delivered a video meeting platform across the Intuit ecosystem with NPS above 90.",
-      "Designed a resilient frontend architecture for high availability and built the foundation for multi-participant meetings.",
+      "Designed a resilient, highly available architecture and built the foundation for multi-participant meetings.",
       "Mentored new hires and defined coding standards. CX3 Technical Excellence Award, FY22 Q3.",
     ],
   },
@@ -158,10 +166,10 @@ export const releases: Release[] = [
     company: "GeekyAnts",
     role: "Intern → Senior Software Engineer",
     tone: "accent2",
-    cats: ["design", "leadership"],
+    cats: ["backend", "design", "leadership"],
     items: [
+      "Drove BuilderX's architecture end to end: Next.js frontend, Laravel and FeathersJS services, and Dockerized deploys. Led its backend move from FeathersJS to Laravel.",
       "Co-created NativeBase v3, one of the first cross-platform React Native design systems: 20k+ GitHub stars, 70k+ weekly downloads.",
-      "Drove architecture for BuilderX, an early design-to-code platform.",
       "Built and led an R&D team shipping developer productivity tools.",
     ],
   },

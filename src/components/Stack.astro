@@ -1,0 +1,61 @@
+---
+import { stack } from "../data/site";
+---
+
+<section id="stack" class="wrap section" aria-labelledby="stack-title">
+  <div class="section-head">
+    <p class="kicker">// what I build with</p>
+    <h2 id="stack-title" class="h2">Across the whole stack</h2>
+  </div>
+  <dl class="grid" style="--min: 240px">
+    {stack.map((s) => (
+      <div class="group">
+        <dt>{s.group}</dt>
+        <dd>
+          <ul>
+            {s.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </dd>
+      </div>
+    ))}
+  </dl>
+</section>
+
+<style>
+  dl {
+    margin: 0;
+  }
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 2px solid var(--border-strong);
+  }
+
+  dt {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-2);
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  li {
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 15px;
+  }
+</style>
