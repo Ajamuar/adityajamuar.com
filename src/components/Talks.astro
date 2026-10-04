@@ -1,0 +1,54 @@
+---
+import { talks } from "../data/site";
+---
+
+<section id="writing" class="wrap section" aria-labelledby="talks-title">
+  <h2 id="talks-title" class="h3">Talks</h2>
+  <ul class="grid" style="--min: 300px">
+    {talks.map((t) => (
+      <li>
+        <a class="talk" href={t.url} target="_blank" rel="noopener noreferrer">
+          <span class="host">{t.host} · YouTube</span>
+          <span class="title">{t.title}</span>
+          <span class="sr-only">(opens in a new tab)</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .h3 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    letter-spacing: -0.02em;
+  }
+
+  .talk {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .talk:hover {
+    color: var(--text);
+    border-color: var(--accent-edge);
+  }
+
+  .host {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent-2);
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="404 — Aditya Jamuar">
+  <main id="main" class="wrap missing">
+    <p class="kicker">$ git checkout this-page</p>
+    <h1>error: pathspec did not match any file known to git.</h1>
+    <p class="lede">That page doesn't exist. Head back to the homepage to see the rest.</p>
+    <a class="pill pill-primary" href="/">Go to homepage</a>
+  </main>
+</Base>
+
+<style>
+  .missing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    max-width: 22ch;
+  }
+</style>

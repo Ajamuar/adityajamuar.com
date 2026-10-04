@@ -1,0 +1,51 @@
+---
+import { site } from "../data/site";
+---
+
+<footer id="hello" class="footer">
+  <div class="wrap inner">
+    <h2>Got a gnarly frontend problem? I like those.</h2>
+    <p class="lede">Design systems, portal architecture, agentic workflows — or just a good engineering story. My inbox is open.</p>
+    <div class="links">
+      <a class="pill pill-primary" href={`mailto:${site.email}`}>{site.email}</a>
+      <a class="pill" href={site.links.linkedin} rel="me">LinkedIn</a>
+      <a class="pill" href={site.links.github} rel="me">GitHub</a>
+    </div>
+    <p class="fine">{site.location} · built with Astro, hosted on Cloudflare</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+
+  .inner {
+    padding-top: 72px;
+    padding-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    max-width: 18ch;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .fine {
+    margin-top: 24px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
