@@ -20,31 +20,21 @@ export type Highlight = {
   figure?: string;
   figureUnit?: string;
   featured?: boolean;
-  href?: string;
-  cta?: string;
 };
 
 export const highlights: Highlight[] = [
   {
     org: "epilot",
     area: "platform",
-    title: "Portal versioning, idea to production",
-    body: "Replaced the habit of cloning whole portals to stage a change with real versions: history, diff, review and rollback, plus a preview of any version on demand.",
     featured: true,
-    href: "#versioning",
-    cta: "See how it shipped",
+    title: "Portal versioning, idea to production",
+    body: "Replaced the habit of cloning whole portals to stage a change with real versions: history, diff, review and rollback, plus a preview of any version on demand. I proposed it and took it all the way to production.",
   },
   {
     org: "epilot",
-    area: "platform",
-    title: "Any merge request, live in a real portal",
-    body: "Review builds for the end-customer portal: one URL parameter loads any MR into a deployed environment, pinned to immutable build IDs. I wrote the RFC and built it.",
-  },
-  {
-    org: "epilot",
-    area: "cloud",
-    title: "AWS tooling that cleans up after itself",
-    body: "Tooling that finds and safely removes stale Cognito resources across dev environments, with dry runs and confirmation gates before anything is deleted.",
+    area: "ai",
+    title: "Tests that fix themselves",
+    body: "A self-healing Playwright pipeline on GitHub Actions and Claude Code. Broken tests become fix PRs, reviewed and merged by a human, never auto-merged.",
   },
   {
     org: "geekyants",
@@ -61,6 +51,12 @@ export const highlights: Highlight[] = [
     body: "Drove org-wide monitoring and incident response practices for Jira.",
   },
   {
+    org: "atlassian",
+    area: "architecture",
+    title: "Jira Issue View, re-platformed",
+    body: "Led the Relay migration and layout modernization, moved ownership from Australia to India, and ran experiments that lifted engagement 31%.",
+  },
+  {
     org: "geekyants",
     area: "open source",
     figure: "20k+",
@@ -69,46 +65,6 @@ export const highlights: Highlight[] = [
     body: "One of the first cross-platform React Native design systems, with 70k+ weekly downloads.",
   },
 ];
-
-export const versioning = {
-  title: "Portal versioning, from idea to production",
-  summary:
-    "Energy companies edit the customer portals their own customers log into. To stage a change safely, teams cloned a whole portal, edited the copy and moved the changes back by hand. I proposed versioning to replace that, and took it all the way to production.",
-  before: [
-    "A full portal copy just to stage one change",
-    "Changes moved back to the live portal by hand",
-    "A limit of two portals capped how many changes could be in flight",
-    "No history, no review, no rollback",
-  ],
-  after: [
-    "Versions are the source of truth",
-    "Compare any two versions before publishing",
-    "Full history, with rollback to any earlier version",
-    "Preview any version on demand, then throw the preview away",
-  ],
-  steps: [
-    {
-      title: "Spot the problem",
-      body: "Noticed teams were using whole portals as branches, and that the portal limit was really a cap on parallel work.",
-    },
-    {
-      title: "Shape the model",
-      body: "Proposed a hybrid: versions hold the truth, and previews become short-lived renders of a version instead of long-lived portals.",
-    },
-    {
-      title: "Find the hard parts first",
-      body: "Drew a sharp line between versioned configuration and live customer data, and worked through merging nested config before building any UI.",
-    },
-    {
-      title: "Get buy-in",
-      body: "Wrote it up as a quarterly initiative, with the open questions and trade-offs laid out for the team.",
-    },
-    {
-      title: "Build and ship",
-      body: "Built it behind a feature flag and took it through release and rollout to production.",
-    },
-  ],
-};
 
 export const practices = [
   {
@@ -169,11 +125,8 @@ export const releases: Release[] = [
     cats: ["backend", "platform", "ai"],
     items: [
       "Led portal versioning from proposal to production: versioned portal config with history, diff and rollback, plus on-demand previews.",
-      "Work across the customer portal stack: the frontend, its API and the CI/CD pipelines that ship them.",
-      "Designed review builds for the end-customer portal: any merge request can be loaded into a deployed environment with one URL parameter and immutable build IDs. Wrote the RFC.",
       "Built a self-healing Playwright pipeline on GitHub Actions and Claude Code that opens fix PRs for broken tests and never auto-merges.",
-      "Shipped a Git worktree CLI that runs four portal repos side by side with deterministic ports.",
-      "Built AWS tooling to find and safely clean up stale Cognito resources across dev environments, with dry runs and confirmation gates.",
+      "Work across the customer portal stack: the frontend, its API and the CI/CD pipelines that ship them.",
     ],
   },
   {
