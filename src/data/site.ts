@@ -12,6 +12,29 @@ export const site = {
   },
 };
 
+export const hero = {
+  prompt: {
+    command: "$ git log --oneline aditya",
+    version: "v5.0",
+    head: "(HEAD → epilot)",
+  },
+  title: "I build products end to end.",
+  subtitle: "From the database to the pixel.",
+  intro:
+    "I'm a software engineer at epilot. I build the customer portals that energy companies across Germany offer their customers, along with the APIs, cloud tooling and release pipelines behind them. Before that: Jira at Atlassian, video meetings at Intuit, and BuilderX and NativeBase at GeekyAnts.",
+  animation: {
+    description: "Four little robots build a world around a laptop, revealing: I build products end to end, from the database to the pixel.",
+    play: "Play animation",
+    pause: "Pause animation",
+    replay: "Replay animation",
+  },
+  contact: {
+    status: "inbox open",
+    body: "Always happy to talk platform architecture, backend systems or building with AI agents.",
+    action: "Say hello",
+  },
+};
+
 export type Highlight = {
   org: string;
   area: string;
